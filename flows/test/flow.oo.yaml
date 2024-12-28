@@ -1,0 +1,41 @@
+nodes:
+  - task: self::read_media_to_ffmpeg
+    node_id: read_media_to_ffmpeg#1
+    inputs_from:
+      - handle: video_source
+        value: /oomol-driver/oomol-storage/oomol_local.mp4
+  - task: self::save_and_preivew
+    node_id: save_and_preivew#1
+    inputs_from:
+      - handle: ffmpeg_source
+        value: ""
+        from_node:
+          - node_id: audio_video_separation#1
+            output_handle: ffmpeg_only_audio
+      - handle: file_name
+        value: aaa
+      - handle: formate
+        value: mp3
+      - handle: save_address
+        value:
+  - task: self::audio_video_separation
+    node_id: audio_video_separation#1
+    inputs_from:
+      - handle: ffmpeg_source
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: ffmpeg_source
+  - task: self::save_and_preivew
+    node_id: save_and_preivew#2
+    inputs_from:
+      - handle: ffmpeg_source
+        value: ""
+        from_node:
+          - node_id: audio_video_separation#1
+            output_handle: ffmpeg_only_video
+      - handle: file_name
+        value: "99"
+      - handle: formate
+        value: mp4
+      - handle: save_address
+        value: /oomol-driver/oomol-storage/video

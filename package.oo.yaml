@@ -1,0 +1,22 @@
+icon: ./icon.png
+scripts:
+  # Script executed when the container is first loaded
+  # eg: bootstrap: pip install pandas
+  bootstrap: |
+    pnpm install 
+    pip install -r requirements.txt
+    wget raw.githubusercontent.com/oomol/builded/refs/heads/master/homebrew_packer/install.sh --output-document /tmp/installer.sh
+    bash +x /tmp/installer.sh
+dependencies:
+  whisper: 0.0.1
+  oomol-transform: 0.0.1
+  oomol-file: 0.0.1
+name: ffmpeg-mac
+version: 0.0.2
+description: Video processing library based on fluent-ffmpeg package, supports
+  hardware acceleration of arm archi
+displayName: FFmpeg for Mac
+releaseNotes: Support audio and video separation function
+platform:
+  - os: darwin
+    cpu: arm64
