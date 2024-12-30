@@ -4,7 +4,7 @@ inputs_def:
     json_schema:
       contentMediaType: oomol/var
 outputs_def:
-  - handle: cloned_ffmpeg_source
+  - handle: cloned_ffmpeg
     description: Output
     json_schema:
       contentMediaType: oomol/var
@@ -15,5 +15,5 @@ executor:
   options:
     spawn: false
     entry: main.ts
-title: cloned_ffmpeg_source
+title: Cloned FFmpeg
 icon: ":fa6-solid:copy:"

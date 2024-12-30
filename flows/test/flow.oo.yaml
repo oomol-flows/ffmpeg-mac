@@ -4,20 +4,6 @@ nodes:
     inputs_from:
       - handle: video_source
         value: /oomol-driver/oomol-storage/oomol_local.mp4
-  - task: self::save_and_preivew
-    node_id: save_and_preivew#1
-    inputs_from:
-      - handle: ffmpeg_source
-        value: ""
-        from_node:
-          - node_id: audio_video_separation#1
-            output_handle: ffmpeg_only_audio
-      - handle: file_name
-        value: aaa
-      - handle: formate
-        value: mp3
-      - handle: save_address
-        value:
   - task: self::audio_video_separation
     node_id: audio_video_separation#1
     inputs_from:
@@ -25,17 +11,31 @@ nodes:
         from_node:
           - node_id: read_media_to_ffmpeg#1
             output_handle: ffmpeg_source
-  - task: self::save_and_preivew
-    node_id: save_and_preivew#2
+  - task: self::save_video
+    title: "Save Video #2"
+    node_id: save_video#2
     inputs_from:
-      - handle: ffmpeg_source
-        value: ""
+      - handle: video_source
         from_node:
           - node_id: audio_video_separation#1
-            output_handle: ffmpeg_only_video
+            output_handle: only_video
       - handle: file_name
-        value: "99"
+        value:
       - handle: formate
         value: mp4
       - handle: save_address
-        value: /oomol-driver/oomol-storage/video
+        value:
+  - task: self::save_audio
+    title: "Save Audio #4"
+    node_id: save_audio#4
+    inputs_from:
+      - handle: audio_source
+        from_node:
+          - node_id: audio_video_separation#1
+            output_handle: only_audio
+      - handle: file_name
+        value:
+      - handle: formate
+        value:
+      - handle: save_address
+        value:

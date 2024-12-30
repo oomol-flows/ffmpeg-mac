@@ -1,17 +1,18 @@
 inputs_def:
-  - handle: ffmpeg_source
+  - handle: audio_source
     description: Input
     json_schema:
       contentMediaType: oomol/var
-    value: ""
+    kind: audio
   - handle: file_name
     json_schema:
       type: string
+    value:
+    nullable: true
   - handle: formate
     json_schema:
       type: string
       enum:
-        - mp4
         - mp3
         - aac
         - wav
@@ -20,13 +21,14 @@ inputs_def:
         - m4a
       ui:options:
         labels:
-          - MP4
           - MP3
           - AAC
           - " WAV"
           - FLAC
           - WMA
           - M4A
+    value:
+    nullable: true
   - handle: save_address
     json_schema:
       type: string
@@ -41,7 +43,7 @@ outputs_def:
       type: string
       minLength: 1
       ui:widget: file
-icon: ":fa6-solid:floppy-disk:currentColor:"
+icon: ":fa6-solid:file-audio:"
 ui:
   default_width: 447.06350824621484
 executor:
@@ -49,3 +51,4 @@ executor:
   options:
     spawn: false
     entry: main.ts
+title: Save Audio

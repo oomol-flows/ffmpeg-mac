@@ -12,7 +12,7 @@ inputs_def:
         - "null"
       ui:widget: any
 outputs_def:
-  - handle: ffmpeg_only_video
+  - handle: only_video
     description: Output
     json_schema:
       contentMediaType: oomol/var
@@ -25,7 +25,8 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
-  - handle: ffmpeg_only_audio
+    kind: video
+  - handle: only_audio
     json_schema:
       contentMediaType: oomol/var
       type:
@@ -37,6 +38,7 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
+    kind: audio
 icon: ":fa6-solid:code-branch:currentColor:"
 ui:
   default_width: 350
@@ -45,3 +47,4 @@ executor:
   options:
     spawn: false
     entry: main.ts
+title: Audio Video Separation

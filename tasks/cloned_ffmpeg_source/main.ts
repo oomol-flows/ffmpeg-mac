@@ -1,11 +1,12 @@
 import type { Context } from "@oomol/types/oocana";
 import {FfmpegCommand} from "fluent-ffmpeg";
+import {getInputPath} from "../../utils/get-input-path";
 
 type Inputs = Readonly<{ 
   ffmpeg_source: FfmpegCommand,
  }>;
 type Outputs = Readonly<{
-  cloned_ffmpeg_source: FfmpegCommand,
+  cloned_ffmpeg: FfmpegCommand,
 }>;
 
 
@@ -13,7 +14,7 @@ export default async function(
   params: Inputs,
   context: Context<Inputs, Outputs>
 ): Promise<Outputs> {
-  const inputPath = (params.ffmpeg_source as any)._inputs[0].source
-  const cloned_ffmpeg_source = params.ffmpeg_source.clone().input(inputPath); 
-  return { cloned_ffmpeg_source: cloned_ffmpeg_source };
+  const inputPath = getInputPath(params.ffmpeg_source);
+  const cloned_ffmpeg = params.ffmpeg_source.clone().input(inputPath); 
+  return { cloned_ffmpeg: cloned_ffmpeg };
 };

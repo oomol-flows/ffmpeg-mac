@@ -4,17 +4,8 @@
       "contentWidth": 413.1328125,
       "rfNode": {
         "position": {
-          "x": 0,
-          "y": 62.75
-        }
-      }
-    },
-    "save_and_preivew#1": {
-      "contentWidth": 447.06350824621484,
-      "rfNode": {
-        "position": {
-          "x": 1025.2529564522688,
-          "y": 571.9987382755269
+          "x": 17,
+          "y": 0
         }
       }
     },
@@ -22,22 +13,17 @@
       "contentWidth": 350,
       "rfNode": {
         "position": {
-          "x": 488.47343612081374,
-          "y": 124.01427392200085
+          "x": 546,
+          "y": 8
         }
       }
     },
-    "save_and_preivew#2": {
-      "contentWidth": 447.06350824621484,
+    "save_video#2": {
+      "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 1025.2529564522688,
-          "y": -66.58344386729468
-        }
-      },
-      "sections": {
-        "preview": {
-          "cardCollapsed": true
+          "x": 1277.745079132857,
+          "y": -195.80433415728652
         }
       }
     }
