@@ -12,9 +12,9 @@ dependencies:
   oomol-transform: 0.0.1
   oomol-file: 0.0.1
 name: ffmpeg-mac
-version: 0.0.6
+version: 0.0.7
 description: Video processing library based on fluent-ffmpeg package, supports
   hardware acceleration of arm archi
 displayName: FFmpeg for Mac
-releaseNotes: update merge block
+releaseNotes: fix srt merge bug
 repository: https://github.com/oomol-flows/ffmpeg-mac

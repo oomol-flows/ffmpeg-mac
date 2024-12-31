@@ -27,3 +27,19 @@ nodes:
         value:
       - handle: save_address
         value: /oomol-driver/oomol-storage/yyy
+  - task: self::media_merge
+    title: "Media Merge #1"
+    node_id: media_merge#1
+    inputs_from:
+      - handle: video_file
+        value: /oomol-driver/oomol-storage/mytest/飞书20241231-162903.mp4
+      - handle: audio_file
+        value:
+      - handle: srt
+        value: /oomol-driver/oomol-storage/mytest/ask.srt
+      - handle: formate
+        value:
+      - handle: file_name
+        value:
+      - handle: save_address
+        value:

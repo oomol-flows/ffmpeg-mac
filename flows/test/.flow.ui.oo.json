@@ -5,7 +5,7 @@
       "rfNode": {
         "position": {
           "x": 0,
-          "y": 13.5
+          "y": 30.5
         }
       }
     },
@@ -14,7 +14,7 @@
       "rfNode": {
         "position": {
           "x": 623,
-          "y": 21.5
+          "y": 38.5
         }
       }
     },
@@ -29,6 +29,15 @@
       "sections": {
         "preview": {
           "cardCollapsed": true
+        }
+      }
+    },
+    "media_merge#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 300,
+          "y": 465
         }
       }
     }

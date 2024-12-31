@@ -28,7 +28,6 @@ export default async function (
       const command = ffmpeg()
         .input(video_file)
         .inputOption('-hwaccel', 'videotoolbox')
-        .outputOption('-vcodec', 'h264_videotoolbox')
         .videoCodec('h264_videotoolbox');
 
       if (audio_file) {
@@ -36,7 +35,7 @@ export default async function (
       }
 
       if (srt) {
-        command.input(srt).inputOption('-f srt');
+        command.outputOption(['-vf', "subtitles=" + srt]);
       }
 
       command
