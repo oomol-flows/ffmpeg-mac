@@ -1,11 +1,11 @@
 {
   "nodes": {
     "read_media_to_ffmpeg#1": {
-      "contentWidth": 413.1328125,
+      "contentWidth": 558.6113990860782,
       "rfNode": {
         "position": {
-          "x": 17,
-          "y": 0
+          "x": 0,
+          "y": 13.5
         }
       }
     },
@@ -13,17 +13,22 @@
       "contentWidth": 350,
       "rfNode": {
         "position": {
-          "x": 546,
-          "y": 8
+          "x": 623,
+          "y": 21.5
         }
       }
     },
-    "save_video#2": {
+    "save_video#1": {
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 1277.745079132857,
-          "y": -195.80433415728652
+          "x": 1037,
+          "y": 0
+        }
+      },
+      "sections": {
+        "preview": {
+          "cardCollapsed": true
         }
       }
     }

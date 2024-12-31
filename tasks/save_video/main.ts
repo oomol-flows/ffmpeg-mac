@@ -24,9 +24,11 @@ export default async function (params: Inputs, context: Context): Promise<Output
       params.video_source
         .save(save_address)
         .inputOption('-hwaccel', 'videotoolbox')
+        .outputOption('-vcodec h264_videotoolbox') 
         .videoCodec('h264_videotoolbox').on("end", () => {
           resolve("ok");
-        }).on('error', (err) => {
+        })
+        .on('error', (err) => {
           console.log("ffmpeg error")
           reject(err);
         });

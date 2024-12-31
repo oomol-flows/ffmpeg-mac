@@ -1,0 +1,17 @@
+nodes:
+  - task: self::media_merge
+    title: "Media Merge #2"
+    node_id: media_merge#2
+    inputs_from:
+      - handle: video_file
+        value: /oomol-driver/oomol-storage/video/99.mp4
+      - handle: audio_file
+        value: /oomol-driver/oomol-storage/test.mp3
+      - handle: srt
+        value:
+      - handle: formate
+        value:
+      - handle: file_name
+        value:
+      - handle: save_address
+        value:
